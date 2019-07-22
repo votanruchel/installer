@@ -166,12 +166,13 @@
             success:function(response){
 
               $('span').html(response);
-              if (response == 'Arquivo de configuracao criado com sucesso') {
+              if (response == 'Arquivo de configuracao criado com sucesso e sistema extraido com sucesso para a pasta raiz!') {
                 $('span').css('background-color','#6ab04c');
                 $('button').html('<a href="'+data['site_domain']+'">Finalizado, clique para ir ao sistema</a>');
                 $('button').css('background-color', '#686de0');
                 $("button").css('border-radius','0px');
                 $('.box').slideUp(2500);
+                setTimeout(window.location.reload(),2500);
               }else{
                 $('span').css('background-color', '#eb4d4b')
                 $("button").html('Nao eh possivel criar um novo documento de configuracao | tentar novamente');
